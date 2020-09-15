@@ -28,8 +28,10 @@ public class StatisticsTest
     public void reportsNaNForEmptyInput()
     {
         List<Float> emptyList = new ArrayList<Float>();
-
+        assertEquals(emptyList.isEmpty(), true);
+        
         Statistics.Stats s = Statistics.getStatistics(emptyList);
+       
         assertEquals(s.min.isNaN(),true);
         assertEquals(s.max.isNaN(),true);
         assertEquals(s.average.isNaN(),true);
